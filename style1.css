@@ -1,0 +1,128 @@
+/* style1.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.gallery {
+    border: 10px solid black;
+    height: 30rem;
+    width: 80rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+    /* Adding background slideshow */
+    background-size: cover;
+    background-position: center;
+    animation: slideshow 20s infinite; /* Adjust duration to control slideshow speed */
+}
+
+@keyframes slideshow {
+    0% {
+        background-image: url('https://www.adventurush.com/wp-content/uploads/2024/01/trekking.jpg') 
+    }
+    25% {
+        background-image: url('https://www.adventurush.com/wp-content/uploads/2024/01/trekking.jpg'); 
+    }
+    50% {
+        background-image: url('https://www.adventurush.com/wp-content/uploads/2024/01/Ladakh-bike-tour.jpg'); 
+    }
+    75% {
+        background-image: url('https://www.adventurush.com/wp-content/uploads/2024/01/Scuba.jpg'); 
+    }
+    100% {
+        background-image: url('https://www.adventurush.com/wp-content/uploads/2024/01/skydiving.jpg'); 
+    }
+}
+
+.thumbnail {
+    position: relative;
+    display: inline-block;
+}
+
+.thumbnail img {
+    margin-top: 13rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 100px; /* Thumbnail size */
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    will-change: transform; /* For smoother transitions */
+}
+
+.thumbnail img:hover,
+.thumbnail img:focus {
+    transform: scale(1.1); /* Slightly zoom in on hover and focus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow on hover */
+}
+
+.fullsize {
+    position: fixed; /* Fixed positioning to overlay the full-size image */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background: rgba(0, 0, 0, 0.8);
+    display: none; /* Initially hidden */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    overflow: hidden; /* Hide scrollbars */
+}
+
+.fullsize img {
+    min-width: 500px; /* Adjusted to be more reasonable */
+    min-height: 500px; /* Adjusted to be more reasonable */
+    max-width: 90%; /* Constrain the image within viewport */
+    max-height: 90%; /* Constrain the image within viewport */
+    border: 5px solid white;
+    object-fit: contain; /* Ensures the image scales correctly */
+    margin: auto; /* Centers the image */
+    display: block; /* Ensures the image is centered */
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2.5em; /* Increased size for better visibility */
+    color: white;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.close:hover {
+    color: #ccc;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .thumbnail img {
+        width: 80px; /* Slightly smaller thumbnails on small screens */
+        height: 80px;
+    }
+
+    .fullsize img {
+        min-width: 300px; /* Adjust for smaller screens while keeping reasonable size */
+        min-height: 300px;
+        max-width: 95%; /* Adjust full-size image size */
+        max-height: 95%;
+    }
+
+    .close {
+        font-size: 2em; /* Smaller close button on small screens */
+        top: 15px;
+        right: 15px;
+    }
+}

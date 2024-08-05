@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="gallery">
+        <!-- Thumbnail 1 -->
+        <div class="thumbnail">
+            <img src="/Amit project/images/Bike-expedition.jpg" alt="Thumbnail 1" onclick="openFullsize('fullsize1')">
+            <div id="fullsize1" class="fullsize">
+                <span class="close" onclick="closeFullsize('fullsize1')">&times;</span>
+                <img src="/Amit project/images/Bike-expedition.jpg" alt="Fullsize 1">
+            </div>
+        </div>
+
+        <!-- Thumbnail 2 -->
+        <div class="thumbnail">
+            <img src="/Amit project/images/Sky-diving.jpg" alt="Thumbnail 2" onclick="openFullsize('fullsize2')">
+            <div id="fullsize2" class="fullsize">
+                <span class="close" onclick="closeFullsize('fullsize2')">&times;</span>
+                <img src="/Amit project/images/Sky-diving.jpg" alt="Fullsize 2">
+            </div>
+        </div>
+
+        <div class="thumbnail">
+            <img src="/Amit project/images/Backpacking Tours.jpg" alt="Thumbnail 2" onclick="openFullsize('fullsize3')">
+            <div id="fullsize3" class="fullsize">
+                <span class="close" onclick="closeFullsize('fullsize3')">&times;</span>
+                <img src="/Amit project/images/Backpacking Tours.jpg" alt="Fullsize 2">
+            </div>
+        </div>
+
+        <div class="thumbnail">
+            <img src="/Amit project/images/Adventure-Tours.jpg" alt="Thumbnail 2" onclick="openFullsize('fullsize4')">
+            <div id="fullsize4" class="fullsize">
+                <span class="close" onclick="closeFullsize('fullsize4')">&times;</span>
+                <img src="/Amit project/images/Adventure-Tours.jpg" alt="Fullsize 2">
+            </div>
+        </div>
+
+        <div class="thumbnail">
+            <img src="/Amit project/images/Trekking.jpg" alt="Thumbnail 2" onclick="openFullsize('fullsize5')">
+            <div id="fullsize5" class="fullsize">
+                <span class="close" onclick="closeFullsize('fullsize5')">&times;</span>
+                <img src="/Amit project/images/Trekking.jpg" alt="Fullsize 2">
+            </div>
+        </div>
+
+        <div class="thumbnail">
+            <img src="/Amit project/images/Wild-Life-Safari.jpg" alt="Thumbnail 2" onclick="openFullsize('fullsize6')">
+            <div id="fullsize6" class="fullsize">
+                <span class="close" onclick="closeFullsize('fullsize6')">&times;</span>
+                <img src="/Amit project/images/Wild-Life-Safari.jpg" alt="Fullsize 2">
+            </div>
+        </div>
+        <!-- Add more thumbnails as needed -->
+    </div>
+
+    <script>
+        function openFullsize(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
+
+        function closeFullsize(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+</body>
+</html>
