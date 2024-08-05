@@ -51,7 +51,7 @@ body {
 
 .thumbnail img {
     margin-top: 13rem;
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 10px;
     width: 100px; /* Thumbnail size */
     height: 100px;
